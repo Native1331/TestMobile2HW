@@ -11,7 +11,8 @@ def allureVersion = "2.17.3",
     selenideVersion = "6.5.2",
     appiumVersion = "8.0.0",
 //    appiumVersion = "7.6.0",
-    restAssured = "4.5.1",
+    restAssuredVersion = "4.5.1",
+    commonsIoVersion = "2.11.0",
     junitVersion = "5.8.2",
     slf4jVersion = "1.7.32"
 
@@ -34,14 +35,13 @@ dependencies {
             "com.codeborne:selenide:$selenideVersion",
             "io.qameta.allure:allure-selenide:$allureVersion",
             "io.appium:java-client:$appiumVersion",
-            "io.rest-assured:rest-assured:$restAssured",
+            "io.rest-assured:rest-assured:$restAssuredVersion",
             "org.junit.jupiter:junit-jupiter:$junitVersion",
             "org.slf4j:slf4j-simple:$slf4jVersion",
             "org.aeonbits.owner:owner:1.0.12",
+            "commons-io:commons-io:$commonsIoVersion",
            )
 }
-
-
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
@@ -59,8 +59,8 @@ tasks.withType(Test) {
     }
 }
 
-task android_tests (type: Test) {
-    useJUnitPlatform{
-        includeTags "android"
+task android(type: Test) {
+    useJUnitPlatform {
+        includeTags 'android'
     }
 }
