@@ -14,6 +14,13 @@ public interface CredentialsConfig extends Config {
     String  buildValue();
     String nameOfTest();
     String urlValue();
+    String platformName();
+    String deviceName();
+    String deviceName1();
+    String platformVersion();
+    String appPackage();
+    String appActivity();
+    String localUrl();
 }
 
 
