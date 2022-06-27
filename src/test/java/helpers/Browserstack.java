@@ -5,9 +5,6 @@ package helpers;
 import static io.restassured.RestAssured.given;
 import static java.lang.String.format;
 
-p
-import static io.restassured.RestAssured.given;
-import static java.lang.String.format;
 
 public class Browserstack {
 
