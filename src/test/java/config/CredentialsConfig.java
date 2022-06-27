@@ -1,26 +1,12 @@
 package config;
 
-
 import org.aeonbits.owner.Config;
 
-@Config.Sources("classpath:config/credential.properties")
+@Config.Sources("classpath:credentials.properties")
 public interface CredentialsConfig extends Config {
-    String userValue();
-    String keyValue();
-    String appValue();
-    String modelOfApp();
-    String version();
-    String projectValue();
-    String  buildValue();
-    String nameOfTest();
-    String urlValue();
-    String platformName();
-    String deviceName();
-    String deviceName1();
-    String platformVersion();
-    String appPackage();
-    String appActivity();
-    String localUrl();
+    String user();
+    String key();
+    String appBrowserstack();
 }
 
 

@@ -2,6 +2,7 @@ package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
 import config.CredentialsConfig;
+import config.MobileBrowserstackConfig;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.MutableCapabilities;
@@ -12,44 +13,40 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class BrowserstackMobileDriver implements WebDriverProvider {
-
-
+    static MobileBrowserstackConfig mobileBrowserstackConfig = ConfigFactory.create(MobileBrowserstackConfig.class);
     static CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
-    String userValue= config.userValue();
-    String keyValue=config. keyValue();
-    String appValue=config.appValue();
-    String modelOfApp=config.modelOfApp();
-    String version=config.version();
-    String projectValue=config.projectValue();
-    String  buildValue=config.buildValue();
-    String nameOfTest=config.nameOfTest();
+    static String userName = config.user();
+    static String password = config.key();
+    static String appBrowserstack = config.appBrowserstack();
+    String deviceName = mobileBrowserstackConfig.getDeviceName();
+    String osVersion = mobileBrowserstackConfig.getOsVersion();
+    static String browserstackUrl = mobileBrowserstackConfig.getBaseUrl();
 
     @Override
-           public WebDriver createDriver(Capabilities capabilities) {
+    public WebDriver createDriver(Capabilities capabilities) {
         MutableCapabilities mutableCapabilities = new MutableCapabilities();
         mutableCapabilities.merge(capabilities);
         // Set your access credentials
-        mutableCapabilities.setCapability("browserstack.user", userValue);
-        mutableCapabilities.setCapability("browserstack.key", keyValue);
+        mutableCapabilities.setCapability("browserstack.user", userName);
+        mutableCapabilities.setCapability("browserstack.key", password);
 
         // Set URL of the application under test
-//        mutableCapabilities.setCapability("app", "bs://c700ce60cf13ae8ed97705a55b8e022f13c5827c");
-        mutableCapabilities.setCapability("app", appValue);
+        mutableCapabilities.setCapability("app", appBrowserstack);
 
         // Specify device and os_version for testing
-        mutableCapabilities.setCapability("device", modelOfApp);
-        mutableCapabilities.setCapability("os_version", version);
+        mutableCapabilities.setCapability("device", deviceName);
+        mutableCapabilities.setCapability("os_version", osVersion);
 
         // Set other BrowserStack capabilities
-        mutableCapabilities.setCapability("project", projectValue);
-        mutableCapabilities.setCapability("build", buildValue);
-        mutableCapabilities.setCapability("name", nameOfTest);
+        mutableCapabilities.setCapability("project", "Mobile Autotest Example");
+        mutableCapabilities.setCapability("build", "browserstack-build-1");
+        mutableCapabilities.setCapability("name", "selenide android test");
         return new RemoteWebDriver(getBrowserstackUrl(), mutableCapabilities);
     }
+
     public static URL getBrowserstackUrl() {
-         String urlValue=config.urlValue();
         try {
-            return new URL(urlValue);
+            return new URL(browserstackUrl);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }

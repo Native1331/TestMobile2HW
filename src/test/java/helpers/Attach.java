@@ -33,7 +33,6 @@ public class Attach {
     }
 
     public static String sessionId() {
-
         return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
     }
 }

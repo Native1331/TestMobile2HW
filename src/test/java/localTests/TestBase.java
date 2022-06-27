@@ -18,33 +18,35 @@ import static helpers.Attach.sessionId;
 import static io.qameta.allure.Allure.step;
 
 public class TestBase {
-    static String deviceHost = System.getProperty("deviceHost", "local");
-
     @BeforeAll
-    public static void setUp() {
+    public static void setup() {
+        String deviceHost = System.getProperty("deviceHost", "local");
         if (Objects.equals(deviceHost, "local")) {
             Configuration.browser = LocalMobileDriver.class.getName();
         } else {
             Configuration.browser = BrowserstackMobileDriver.class.getName();
         }
         Configuration.browserSize = null;
+        System.out.println(deviceHost);
     }
 
     @BeforeEach
     public void startDriver() {
         addListener("AllureSelenide", new AllureSelenide());
+
         open();
     }
 
     @AfterEach
     public void afterEach() {
+        String deviceHost = System.getProperty("deviceHost", "local");
+
         String sessionId = sessionId();
 
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
 
         step("Close driver", Selenide::closeWebDriver);
-
         if (Objects.equals(deviceHost, "browserstack")) {
             Attach.video(sessionId);
         }

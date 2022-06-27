@@ -1,7 +1,6 @@
 package drivers;
-
 import com.codeborne.selenide.WebDriverProvider;
-import config.CredentialsConfig;
+import config.MobileLocalConfig;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.remote.AutomationName;
@@ -13,21 +12,20 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
+
 import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
 
 public class LocalMobileDriver implements WebDriverProvider {
-    CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
-    String platformName;
-    String deviceName;
-    String deviceName1;
-    String platformVersion;
-    String appPackage;
-    String appActivity;
-    String localUrl;
 
-    public URL getAppiumServerUrl() {
+    static MobileLocalConfig mobileLocalConfig = ConfigFactory.create(MobileLocalConfig.class);
+    static String localBaseUrl = mobileLocalConfig.getBaseUrl();
+    String localPlatformName = mobileLocalConfig.getPlatformName();
+    String localDeviceName = mobileLocalConfig.getDeviceName();
+    String localOsVersion = mobileLocalConfig.getOsVersion();
+
+    public static URL getAppiumServerUrl() {
         try {
-            return new URL(localUrl);
+            return new URL(localBaseUrl);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
@@ -40,14 +38,13 @@ public class LocalMobileDriver implements WebDriverProvider {
         UiAutomator2Options options = new UiAutomator2Options();
         options.merge(capabilities);
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
-        options.setPlatformName(platformName);
-        options.setDeviceName(deviceName);
-//        options.setDeviceName("Pixel 4 API 30");
-        options.setPlatformVersion(platformVersion);
-//        options.setPlatformVersion("11.0");
+        options.setPlatformName(localPlatformName);
+        options.setDeviceName(localDeviceName);
+        options.setPlatformVersion(localOsVersion);
         options.setApp(app.getAbsolutePath());
-        options.setAppPackage(appPackage);
-        options.setAppActivity(appActivity);
+        options.setAppPackage("org.wikipedia.alpha");
+        options.setAppActivity("org.wikipedia.main.MainActivity");
+
         return new AndroidDriver(getAppiumServerUrl(), options);
     }
 
@@ -66,4 +63,5 @@ public class LocalMobileDriver implements WebDriverProvider {
         }
         return app;
     }
+
 }
