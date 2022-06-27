@@ -1,5 +1,4 @@
 package localTests;
-
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import drivers.BrowserstackMobileDriver;
@@ -18,9 +17,11 @@ import static helpers.Attach.sessionId;
 import static io.qameta.allure.Allure.step;
 
 public class TestBase {
+    static String deviceHost = System.getProperty("deviceHost", "local");
+
     @BeforeAll
     public static void setup() {
-        String deviceHost = System.getProperty("deviceHost", "local");
+
         if (Objects.equals(deviceHost, "local")) {
             Configuration.browser = LocalMobileDriver.class.getName();
         } else {
@@ -38,8 +39,6 @@ public class TestBase {
 
     @AfterEach
     public void afterEach() {
-        String deviceHost = System.getProperty("deviceHost", "local");
-
         String sessionId = sessionId();
 
         Attach.screenshotAs("Last screenshot");

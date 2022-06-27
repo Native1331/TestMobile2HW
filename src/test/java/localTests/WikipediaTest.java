@@ -9,6 +9,7 @@ import static io.qameta.allure.Allure.step;
 
 public class WikipediaTest extends TestBase {
 
+    @Tag("android")
     @Test
     void openApp() {
         open();
