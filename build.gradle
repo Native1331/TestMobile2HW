@@ -59,6 +59,6 @@ tasks.withType(Test) {
     }
 }
 
-task WikipediaTest_tests (type: Test) {
+task WikipediaTest (type: Test) {
     useJUnitPlatform{
         includeTags "WikipediaTest"
