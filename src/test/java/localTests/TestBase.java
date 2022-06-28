@@ -21,7 +21,6 @@ public class TestBase {
 
     @BeforeAll
     public static void setup() {
-        open();
         if (Objects.equals(deviceHost, "local")) {
             Configuration.browser = LocalMobileDriver.class.getName();
         } else {
