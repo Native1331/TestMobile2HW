@@ -12,10 +12,10 @@ public class WikipediaTest extends TestBase {
     @Tag("android")
     @Test
     void openApp() {
-
+    open();
         step("Open Wikipedia app", () -> {
-            $(AppiumBy.id("org.wikipedia.alpha:id/option_label"))
-                    .shouldHave(Condition.text("Русский"));
+ //           $(AppiumBy.id("org.wikipedia.alpha:id/option_label"))
+ //                   .shouldHave(Condition.text("Русский"));
             $(AppiumBy.className("android.widget.LinearLayout")).click();
         });
         step("Choose another language", () -> {
