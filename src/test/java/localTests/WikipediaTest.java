@@ -12,7 +12,6 @@ public class WikipediaTest extends TestBase {
     @Tag("android")
     @Test
     void openApp() {
-        open();
 
         step("Open Wikipedia app", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/option_label"))
