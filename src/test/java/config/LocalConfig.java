@@ -5,21 +5,21 @@ import org.aeonbits.owner.Config;
 @Config.Sources("classpath:resources/properties/local.properties")
 public interface LocalConfig extends Config {
 
-    @Key("deviceLocalName")
+    @Key("localDeviceName")
     @DefaultValue("Pixel 4 API 30")
-    String getDeviceName();
+    String getLocalDeviceName();
 
-    @Key("osLocalVersion")
+    @Key("localOsVersion")
     @DefaultValue("11.0")
-    String getOsVersion();
+    String getLocalOsVersion();
 
     @Key("LocalUrl")
     @DefaultValue("http://localhost:4723/wd/hub")
     String getLocalUrl();
 
-    @Key("platformName")
+    @Key("localPlatformName")
     @DefaultValue("Android")
-    String getPlatformName();
+    String getLocalPlatformName();
 }
 
 
