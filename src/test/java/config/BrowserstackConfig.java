@@ -17,8 +17,6 @@ import java.net.URL;
     @Key("baseUrl")
     @DefaultValue("http://hub.browserstack.com/wd/hub")
     String getBaseUrl();
-
-
 }
 
 
