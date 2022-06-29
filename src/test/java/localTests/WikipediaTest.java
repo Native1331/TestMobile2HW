@@ -14,7 +14,7 @@ public class WikipediaTest extends TestBase {
     @Tag("android")
     @Test
     void openApp() {
-        open();
+        back();
         step("Open Wikipedia app", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/option_label"))
                     .shouldHave(Condition.text("Русский"));
