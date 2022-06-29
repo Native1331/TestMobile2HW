@@ -45,6 +45,8 @@ public class TestBase {
         step("Close driver", Selenide::closeWebDriver);
         if (Objects.equals(deviceHost, "browserstack")) {
             Attach.video(sessionId);
+            open();
         }
     }
+
 }
