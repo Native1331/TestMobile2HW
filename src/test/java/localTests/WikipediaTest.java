@@ -11,13 +11,14 @@ import static io.qameta.allure.Allure.step;
 
 public class WikipediaTest extends TestBase {
 
-  //  @Tag("android")
+    @Tag("test")
     @Test
     void openApp() {
-        back();
+
         step("Open Wikipedia app", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/option_label"))
-                    .shouldHave(Condition.text("Русский"));
+                  .shouldHave(Condition.text("Русский"));
+            $(AppiumBy.className("android.widget.ImageView")).click();
             $(AppiumBy.className("android.widget.LinearLayout")).click();
         });
         step("Choose another language", () -> {
@@ -56,4 +57,4 @@ public class WikipediaTest extends TestBase {
                     .shouldHave(Condition.text("Тестирование"));
         });
     }
-}
+    }
