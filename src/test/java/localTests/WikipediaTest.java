@@ -16,8 +16,8 @@ public class WikipediaTest extends TestBase {
     void openApp() {
 
         step("Open Wikipedia app", () -> {
-      //      $(AppiumBy.id("org.wikipedia:id/option_label"))
-              $(AppiumBy.className("android.widget.TextView[2]"))
+            $(AppiumBy.id("org.wikipedia:id/option_label"))
+      //        $(AppiumBy.className("android.widget.TextView[2]"))
                   .shouldHave(Condition.text("English"));
             $(AppiumBy.className("android.widget.ImageView")).click();
             $(AppiumBy.className("android.widget.LinearLayout")).click();
