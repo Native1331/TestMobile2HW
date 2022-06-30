@@ -11,7 +11,7 @@ public class Browserstack {
 
 
         return given()
-                .auth().basic("kirill_mkA0Xh", "MMJt56JvwWbPRmG8zYdS")
+                .auth().basic(userValue, keyValue);
                 .log().all()
                 .when()
                 .get(url)

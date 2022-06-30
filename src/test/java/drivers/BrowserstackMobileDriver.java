@@ -16,7 +16,7 @@ import java.net.URL;
             MutableCapabilities mutableCapabilities = new MutableCapabilities();
             mutableCapabilities.merge(capabilities);
             // Set your access credentials
-            mutableCapabilities.setCapability("browserstack.user", config.server());
+            mutableCapabilities.setCapability("browserstack.user", config.userValue());
             mutableCapabilities.setCapability("browserstack.key", config.keyValue());
             mutableCapabilities.setCapability("app", config.app());
 

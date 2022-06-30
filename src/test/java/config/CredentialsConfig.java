@@ -10,6 +10,7 @@ import org.aeonbits.owner.Config;
 })
 
 public interface CredentialsConfig extends Config {
+    String userValue();
     String server();
     String keyValue();
     String project ();

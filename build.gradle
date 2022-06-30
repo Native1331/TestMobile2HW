@@ -61,5 +61,9 @@ tasks.withType(Test) {
     }
 }
 
-
+task android_tests (type: Test) {
+    useJUnitPlatform{
+        includeTags "android"
+    }
+}
 
