@@ -28,7 +28,7 @@ public class WikipediaTest extends TestBase {
             $(AppiumBy.id("org.wikipedia.alpha:id/localized_language_name")).click();
             back();
             $(AppiumBy.xpath("//android.widget.TextView[3]"))
-                    .shouldHave(Condition.text("3. Español"));
+                    .shouldHave(Condition.text("Русский"));
         });
         step("Make a syncing", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/bottomOffset")).click();
