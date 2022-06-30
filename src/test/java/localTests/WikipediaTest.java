@@ -11,7 +11,7 @@ import static io.qameta.allure.Allure.step;
 
 public class WikipediaTest extends TestBase {
 
-    @Tag("test")
+ //   @Tag("test")
     @Test
     void openApp() {
 
