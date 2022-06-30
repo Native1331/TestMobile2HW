@@ -31,7 +31,9 @@ import java.net.URL;
             return new RemoteWebDriver(getBrowserstackUrl(), mutableCapabilities);
         }
 
-        public static URL getBrowserstackUrl() {
+
+
+           public static URL getBrowserstackUrl() {
             try {
                 return new URL(config.baseUrl());
             } catch (MalformedURLException e) {
