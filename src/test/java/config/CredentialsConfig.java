@@ -3,20 +3,25 @@ package config;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources("classpath:config/credential.properties")
+@Config.LoadPolicy(Config.LoadType.MERGE)
+@Config.Sources({
+        "system:properties",
+        "classpath:config/credential.properties"
+})
+
 public interface CredentialsConfig extends Config {
-    String userValue();
+    String server();
     String keyValue();
-    String appValue();
-    String modelOfApp();
-    String version();
-    String projectValue();
-    String  buildValue();
-    String nameOfTest();
-    String urlValue();
+    String project ();
+    String build();
+    String name();
+    String app();
+    String device();
+    String osVersion();
+    String baseUrl();
+
+
 }
-
-
 
 
 

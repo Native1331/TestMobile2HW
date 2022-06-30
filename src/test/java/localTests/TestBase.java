@@ -1,4 +1,5 @@
 package localTests;
+
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import drivers.BrowserstackMobileDriver;
@@ -18,9 +19,9 @@ import static io.qameta.allure.Allure.step;
 
 public class TestBase {
     static String deviceHost = System.getProperty("deviceHost", "local");
-
     @BeforeAll
     public static void setup() {
+
         if (Objects.equals(deviceHost, "local")) {
             Configuration.browser = LocalMobileDriver.class.getName();
         } else {
@@ -34,7 +35,7 @@ public class TestBase {
     public void startDriver() {
         addListener("AllureSelenide", new AllureSelenide());
         open();
-            }
+    }
 
     @AfterEach
     public void afterEach() {
@@ -46,7 +47,6 @@ public class TestBase {
         step("Close driver", Selenide::closeWebDriver);
         if (Objects.equals(deviceHost, "browserstack")) {
             Attach.video(sessionId);
-                    }
+        }
     }
-
 }

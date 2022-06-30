@@ -1,10 +1,8 @@
 package helpers;
 
 
-
 import static io.restassured.RestAssured.given;
 import static java.lang.String.format;
-
 
 public class Browserstack {
 
@@ -13,7 +11,7 @@ public class Browserstack {
 
 
         return given()
-                .auth().basic("autotestscloud_qAejV5", "DkvhzD6ZSLTsxYERedAR")
+                .auth().basic("kirill_mkA0Xh", "MMJt56JvwWbPRmG8zYdS")
                 .log().all()
                 .when()
                 .get(url)
@@ -24,3 +22,4 @@ public class Browserstack {
                 .path("automation_session.video_url");
     }
 }
+
