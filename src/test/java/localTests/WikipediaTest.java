@@ -25,7 +25,7 @@ public class WikipediaTest extends TestBase {
         step("Choose another language", () -> {
             $(AppiumBy.className("android.widget.LinearLayout")).click();
             $(AppiumBy.xpath("//android.widget.TextView[@text = 'ADD LANGUAGE']")).click();
-            $$(AppiumBy.id("org.wikipedia.alpha:id/localized_language_name")).get(2).click();
+            $$(AppiumBy.className("android.widget.LinearLayout")).get(1).click();
             back();
             $(AppiumBy.xpath("//android.widget.TextView[@text= 'Русский']"))
                     .shouldHave(Condition.text("Русский"));
