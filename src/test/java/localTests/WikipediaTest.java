@@ -32,7 +32,7 @@ public class WikipediaTest extends TestBase {
                     .shouldHave(Condition.text("Русский"));
         });
         step("Make a syncing", () -> {
-            $(AppiumBy.xpath("//android.widget.LinearLayout[2]")).click();
+            $(AppiumBy.xpath("//android.widget.LinearLayout[3]")).click();
             $(AppiumBy.id("org.wikipedia.alpha:id/secondaryTextView")).click();
             $(AppiumBy.className("android.widget.LinearLayout")).click();
             $(AppiumBy.id("org.wikipedia.alpha:id/secondaryTextView"))
