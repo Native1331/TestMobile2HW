@@ -26,7 +26,7 @@ public class WikipediaTest extends TestBase {
             $$(AppiumBy.xpath("//android.widget.TextView")).get(3)
                     .shouldHave(Condition.text("Русский"));
         });
-        step("Make a syncing", () -> {
+      /**  step("Make a syncing", () -> {
             $(AppiumBy.xpath("//android.widget.LinearLayout[3]")).click();
        //     $(AppiumBy.id("org.wikipedia.alpha:id/secondaryTextView")).click();
        //     $(AppiumBy.className("android.widget.LinearLayout")).click();
@@ -35,13 +35,12 @@ public class WikipediaTest extends TestBase {
                             "to read later, even when you’re offline. " +
                             "Login to your Wikipedia account to sync your reading lists. Join Wikipedia"));
         });
-     /**   step("Make a reports", () -> {
+        step("Make a reports", () -> {
             $(AppiumBy.xpath(("//android.widget.LinearLayout[4]"))).click();
-            $(AppiumBy.id("org.wikipedia.alpha:id/switchView"))
-                    .shouldHave(Condition.text("Help make the app better by letting us know how you use it." +
-                            " Data collected is anonymous. Learn more"));
+            $(AppiumBy.className("android.widget.TextView"))
+                    .shouldHave(Condition.text("Reading lists with sync"));
             $(AppiumBy.xpath("//android.widget.Button[@text='GET STARTED']")).click();
-        });**/
+        });
         step("Open main page", () -> {
             $(AppiumBy.className("android.widget.TextView"))
                     .shouldHave(Condition.text("SEARCH"));
@@ -54,7 +53,7 @@ public class WikipediaTest extends TestBase {
                     .shouldHave(Condition.text("QUALITY ASSURANCE"));
         });
     }
-    }
+    }**/
    /** You can make reading lists from articles you want to read later, even when you’re offline. Login to your Wikipedia account to sync your reading lists. Join Wikipedia
         android.widget.Button
         android.widget.TextView1
