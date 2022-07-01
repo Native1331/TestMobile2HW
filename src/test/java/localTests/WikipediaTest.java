@@ -35,13 +35,13 @@ public class WikipediaTest extends TestBase {
                             "to read later, even when you’re offline. " +
                             "Login to your Wikipedia account to sync your reading lists. Join Wikipedia"));
         });
-        step("Make a reports", () -> {
+     /**   step("Make a reports", () -> {
             $(AppiumBy.xpath(("//android.widget.LinearLayout[4]"))).click();
             $(AppiumBy.id("org.wikipedia.alpha:id/switchView"))
                     .shouldHave(Condition.text("Help make the app better by letting us know how you use it." +
                             " Data collected is anonymous. Learn more"));
             $(AppiumBy.xpath("//android.widget.Button[@text='GET STARTED']")).click();
-        });
+        });**/
         step("Open main page", () -> {
             $(AppiumBy.className("android.widget.TextView"))
                     .shouldHave(Condition.text("SEARCH"));
