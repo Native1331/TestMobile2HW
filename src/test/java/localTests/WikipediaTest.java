@@ -53,9 +53,11 @@ public class WikipediaTest extends TestBase {
                     .shouldHave(Condition.text("QUALITY ASSURANCE"));
         });
     }
-    }**/
-   /** You can make reading lists from articles you want to read later, even when you’re offline. Login to your Wikipedia account to sync your reading lists. Join Wikipedia
+    }
+    You can make reading lists from articles you want to read later, even when you’re offline. Login to your Wikipedia account to sync your reading lists. Join Wikipedia
         android.widget.Button
         android.widget.TextView1
         Help make the app better by letting us know how you use it. Data collected is anonymous. Learn more
  **/
+    }
+}
