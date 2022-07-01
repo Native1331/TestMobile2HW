@@ -28,8 +28,8 @@ public class WikipediaTest extends TestBase {
         });
         step("Make a syncing", () -> {
             $(AppiumBy.xpath("//android.widget.LinearLayout[3]")).click();
-            $(AppiumBy.id("org.wikipedia.alpha:id/secondaryTextView")).click();
-            $(AppiumBy.className("android.widget.LinearLayout")).click();
+       //     $(AppiumBy.id("org.wikipedia.alpha:id/secondaryTextView")).click();
+       //     $(AppiumBy.className("android.widget.LinearLayout")).click();
             $(AppiumBy.id("org.wikipedia.alpha:id/secondaryTextView"))
                     .shouldHave(Condition.text("You can make reading lists from articles you want " +
                             "to read later, even when you’re offline. " +
