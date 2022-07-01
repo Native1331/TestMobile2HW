@@ -30,7 +30,7 @@ public class WikipediaTest extends TestBase {
             $(AppiumBy.xpath("//android.widget.LinearLayout[3]")).click();
        //     $(AppiumBy.id("org.wikipedia.alpha:id/secondaryTextView")).click();
        //     $(AppiumBy.className("android.widget.LinearLayout")).click();
-            $(AppiumBy.id("org.wikipedia.alpha:id/secondaryTextView"))
+            $$(AppiumBy.className("android.widget.TextView")).get(1)
                     .shouldHave(Condition.text("You can make reading lists from articles you want " +
                             "to read later, even when you’re offline. " +
                             "Login to your Wikipedia account to sync your reading lists. Join Wikipedia"));
@@ -38,8 +38,9 @@ public class WikipediaTest extends TestBase {
         step("Make a reports", () -> {
             $(AppiumBy.xpath(("//android.widget.LinearLayout[4]"))).click();
             $(AppiumBy.id("org.wikipedia.alpha:id/switchView"))
-                    .shouldHave(Condition.text("Отправлять отчёты об использовании"));
-            $(AppiumBy.xpath("//android.widget.Button[@text='НАЧАТЬ']")).click();
+                    .shouldHave(Condition.text("Help make the app better by letting us know how you use it." +
+                            " Data collected is anonymous. Learn more"));
+            $(AppiumBy.xpath("//android.widget.Button[@text='GET STARTED']")).click();
         });
         step("Open main page", () -> {
             $(AppiumBy.className("android.widget.TextView"))
