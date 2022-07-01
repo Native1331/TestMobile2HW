@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.files.DownloadActions.click;
 import static io.qameta.allure.Allure.step;
 
 
@@ -31,7 +32,7 @@ public class WikipediaTest extends TestBase {
                     .shouldHave(Condition.text("Русский"));
         });
         step("Make a syncing", () -> {
-            $$(AppiumBy.className("android.widget.LinearLayout")).get(2).click();
+            $(AppiumBy.xpath("//android.widget.LinearLayout[2]")).click();
             $(AppiumBy.id("org.wikipedia.alpha:id/secondaryTextView")).click();
             $(AppiumBy.className("android.widget.LinearLayout")).click();
             $(AppiumBy.id("org.wikipedia.alpha:id/secondaryTextView"))
