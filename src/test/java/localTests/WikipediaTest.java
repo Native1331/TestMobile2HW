@@ -31,7 +31,7 @@ public class WikipediaTest extends TestBase {
                     .shouldHave(Condition.text("Русский"));
         });
         step("Make a syncing", () -> {
-            $$(AppiumBy.id("org.wikipedia.alpha:id/bottomOffset")).get(4).click();
+            $$(AppiumBy.id("org.wikipedia.alpha:id/bottomOffset")).get(5).click();
             $(AppiumBy.id("org.wikipedia.alpha:id/secondaryTextView")).click();
             $(AppiumBy.className("android.widget.LinearLayout")).click();
             $(AppiumBy.id("org.wikipedia.alpha:id/secondaryTextView"))
