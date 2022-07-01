@@ -1,17 +1,12 @@
 package localTests;
-
 import com.codeborne.selenide.Condition;
 import io.appium.java_client.AppiumBy;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.files.DownloadActions.click;
 import static io.qameta.allure.Allure.step;
 
-
 public class WikipediaTest extends TestBase {
-
     @Tag("android")
     @Test
     void openApp() {
@@ -36,10 +31,9 @@ public class WikipediaTest extends TestBase {
             $(AppiumBy.id("org.wikipedia.alpha:id/secondaryTextView")).click();
             $(AppiumBy.className("android.widget.LinearLayout")).click();
             $(AppiumBy.id("org.wikipedia.alpha:id/secondaryTextView"))
-                    .shouldHave(Condition.text("Вы можете создавать списки для чтения из статей, которые вы хотите " +
-                            "прочитать позже, даже если вы находитесь в офлайне. \n" +
-                            "Авторизуйтесь с помощью учётной записи Википедии для синхронизации ваших списков для" +
-                            " чтения. Происоединяйтесь к Википедии"));
+                    .shouldHave(Condition.text("You can make reading lists from articles you want " +
+                            "to read later, even when you’re offline. " +
+                            "Login to your Wikipedia account to sync your reading lists. Join Wikipedia"));
         });
         step("Make a reports", () -> {
             $(AppiumBy.xpath(("//android.widget.LinearLayout[4]"))).click();
@@ -52,11 +46,16 @@ public class WikipediaTest extends TestBase {
                     .shouldHave(Condition.text("Поиск по Википедии"));
             $(AppiumBy.className("android.widget.TextView")).click();
         });
-        step(" Search  page with text Инженер по тестированию", () -> {
+        step(" Search  page with text QA", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text"))
-                    .sendKeys("Инженер по тестированию");
+                    .sendKeys("QA");
             $(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
-                    .shouldHave(Condition.text("Тестирование"));
+                    .shouldHave(Condition.text("QUALITY ASSURANCE"));
         });
     }
     }
+   /** You can make reading lists from articles you want to read later, even when you’re offline. Login to your Wikipedia account to sync your reading lists. Join Wikipedia
+        android.widget.Button
+        android.widget.TextView1
+        Help make the app better by letting us know how you use it. Data collected is anonymous. Learn more
+ **/
