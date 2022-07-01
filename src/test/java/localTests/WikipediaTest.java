@@ -44,7 +44,7 @@ public class WikipediaTest extends TestBase {
         });
         step("Open main page", () -> {
             $(AppiumBy.className("android.widget.TextView"))
-                    .shouldHave(Condition.text("Поиск по Википедии"));
+                    .shouldHave(Condition.text("SEARCH"));
             $(AppiumBy.className("android.widget.TextView")).click();
         });
         step(" Search  page with text QA", () -> {
