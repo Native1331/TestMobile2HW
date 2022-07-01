@@ -27,7 +27,7 @@ public class WikipediaTest extends TestBase {
             $(AppiumBy.xpath("//android.widget.TextView[@text = 'ADD LANGUAGE']")).click();
             $(AppiumBy.id("org.wikipedia.alpha:id/localized_language_name")).click();
             back();
-            $(AppiumBy.xpath("//android.widget.TextView[3]"))
+            $(AppiumBy.xpath("//android.widget.TextView[@text= 'Русский']"))
                     .shouldHave(Condition.text("Русский"));
         });
         step("Make a syncing", () -> {
