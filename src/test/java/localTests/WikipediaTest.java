@@ -44,13 +44,13 @@ public class WikipediaTest extends TestBase {
         step("Open main page", () -> {
             $(AppiumBy.className("android.widget.TextView"))
                     .shouldHave(Condition.text("Search Wikipedia"));
-            $(AppiumBy.className("android.widget.TextView")).click();
-        });
+                    });
         step(" Search  page with text QA", () -> {
-            $$(AppiumBy.className("android.widget.TextView")).get(1)
-                    .sendKeys("QA");
+            $$(AppiumBy.className("android.widget.TextView")).get(1).click();
+
+       //             .sendKeys("QA");
             $(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
                     .shouldHave(Condition.text("QUALITY ASSURANCE"));
-        });
+        });//
     }
 }
