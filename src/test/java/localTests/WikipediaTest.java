@@ -38,7 +38,7 @@ public class WikipediaTest extends TestBase {
         step("Make a reports", () -> {
             $(AppiumBy.xpath(("//android.widget.LinearLayout[4]"))).click();
             $(AppiumBy.className("android.widget.TextView"))
-                    .shouldHave(Condition.text("Reading lists with sync"));
+                    .shouldHave(Condition.text("Send anonymous data"));
             $(AppiumBy.xpath("//android.widget.Button[@text='GET STARTED']")).click();
         });
         step("Open main page", () -> {
