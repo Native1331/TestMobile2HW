@@ -12,5 +12,22 @@
   ![This is an image](/design/icons/appium.png) Appium</br><h2> 
 Устройство Pixel 4 API 30 на платформе Android, версия 11.</br>
 Локально использовался телефон Galaxy A30s на платформе Android, версия 11.</br>
+Примеры конфигураций:</br>
+Browserstack:</br>
+server = hub-cloud.browserstack.com
+keyValue = NypqJJL1ziWmKtSzQWD9
+userValue =natalya_fIMXuC
+project = QA.GURU lesson 12/21
+build = browserstack-build-1
+name = selenide android test
+device = Google Pixel 3
+osVersion = 9.0
+baseUrl = http://hub.browserstack.com/wd/hub</br>
+Local:</br>
+deviceName = Galaxy A03s
+osVersion = 11
+platformName= Android
+url = http://localhost:4723/wd/hub</br>
+
 
 
