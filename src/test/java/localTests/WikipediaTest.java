@@ -47,7 +47,7 @@ public class WikipediaTest extends TestBase {
             $(AppiumBy.className("android.widget.TextView")).click();
         });
         step(" Search  page with text QA", () -> {
-            $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text"))
+            $$(AppiumBy.className("android.widget.TextView")).get(1)
                     .sendKeys("QA");
             $(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
                     .shouldHave(Condition.text("QUALITY ASSURANCE"));
