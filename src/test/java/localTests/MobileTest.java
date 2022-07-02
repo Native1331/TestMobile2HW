@@ -48,7 +48,7 @@ public class MobileTest extends TestBase {
             $(AppiumBy.className("android.widget.TextView")).click();
                    $(AppiumBy.className("android.widget.EditText"))
                                  .sendKeys("QA");
-                    $$(AppiumBy.className("android.widget.TextView")).get(1)
+                    $$(AppiumBy.className("android.widget.TextView")).get(2)
                             .shouldHave(Condition.text("QA"));
         });
     }
