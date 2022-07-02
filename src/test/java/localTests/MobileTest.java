@@ -48,7 +48,7 @@ public class MobileTest extends TestBase {
             $(AppiumBy.className("android.widget.TextView")).click();
                    $(AppiumBy.className("android.widget.EditText"))
                                  .sendKeys("QA");
-                    $$(AppiumBy.className("android.view.ViewGroup")).get(0)
+                    $(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
                             .shouldHave(Condition.text("QA"));
         });
     }
