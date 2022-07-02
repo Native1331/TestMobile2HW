@@ -36,7 +36,7 @@ public class WikipediaTest extends TestBase {
                             "Login to your Wikipedia account to sync your reading lists. Join Wikipedia"));
         });
         step("Make a reports", () -> {
-            $(AppiumBy.xpath(("//android.widget.LinearLayout[6]"))).click();
+            $(AppiumBy.xpath(("//android.widget.LinearLayout[4]"))).click();
             $(AppiumBy.className("android.widget.TextView"))
                     .shouldHave(Condition.text("Reading lists with sync"));
             $(AppiumBy.xpath("//android.widget.Button[@text='GET STARTED']")).click();
