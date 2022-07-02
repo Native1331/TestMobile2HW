@@ -10,5 +10,7 @@
   Эмулятор:</br>
   ![This is an image](/design/icons/androidstudio.png) Androidstudio;</br>
   ![This is an image](/design/icons/appium.png) Appium</br><h2> 
-  
+Устройство Pixel 4 API 30 на платформе Android, версия 11.</br>
+Локально использовался телефон Galaxy A30s на платформе Android, версия 11.</br>
+
 
