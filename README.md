@@ -23,6 +23,7 @@ project = QA.GURU lesson 12/21</br>
 build = browserstack-build-1</br>
 name = selenide android test</br>
 device = Google Pixel 3</br>
+app=bs://d813a0235a468fc036bacbc1820e5409d0d8ea8d</br>
 osVersion = 9.0</br>
 baseUrl = http://hub.browserstack.com/wd/hub</br>
 
