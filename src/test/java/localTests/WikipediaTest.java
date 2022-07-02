@@ -13,8 +13,8 @@ public class WikipediaTest extends TestBase {
 
         step("Open Wikipedia app", () -> {
             $(AppiumBy.id("org.wikipedia:id/option_label"))
-      //        $(AppiumBy.className("android.widget.TextView[2]"))
-                  .shouldHave(Condition.text("English"));
+                    //        $(AppiumBy.className("android.widget.TextView[2]"))
+                    .shouldHave(Condition.text("English"));
             $(AppiumBy.className("android.widget.ImageView")).click();
             $(AppiumBy.className("android.widget.LinearLayout")).click();
         });
@@ -26,10 +26,10 @@ public class WikipediaTest extends TestBase {
             $$(AppiumBy.xpath("//android.widget.TextView")).get(3)
                     .shouldHave(Condition.text("Русский"));
         });
-      /**  step("Make a syncing", () -> {
+        step("Make a syncing", () -> {
             $(AppiumBy.xpath("//android.widget.LinearLayout[3]")).click();
-       //     $(AppiumBy.id("org.wikipedia.alpha:id/secondaryTextView")).click();
-       //     $(AppiumBy.className("android.widget.LinearLayout")).click();
+            //     $(AppiumBy.id("org.wikipedia.alpha:id/secondaryTextView")).click();
+            //     $(AppiumBy.className("android.widget.LinearLayout")).click();
             $$(AppiumBy.className("android.widget.TextView")).get(1)
                     .shouldHave(Condition.text("You can make reading lists from articles you want " +
                             "to read later, even when you’re offline. " +
@@ -52,12 +52,5 @@ public class WikipediaTest extends TestBase {
             $(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
                     .shouldHave(Condition.text("QUALITY ASSURANCE"));
         });
-    }
-    }
-    You can make reading lists from articles you want to read later, even when you’re offline. Login to your Wikipedia account to sync your reading lists. Join Wikipedia
-        android.widget.Button
-        android.widget.TextView1
-        Help make the app better by letting us know how you use it. Data collected is anonymous. Learn more
- **/
     }
 }
