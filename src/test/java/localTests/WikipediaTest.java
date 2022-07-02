@@ -50,7 +50,7 @@ public class WikipediaTest extends TestBase {
                    $(AppiumBy.className("android.widget.EditText"))
                                  .sendKeys("QA");
                     $(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
-                            .shouldHave(Condition.text("QUALITY ASSURANCE"));
+                            .shouldHave(Condition.text("QA"));
         });
     }
 }
