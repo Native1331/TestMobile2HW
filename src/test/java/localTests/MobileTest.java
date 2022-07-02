@@ -8,11 +8,10 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
-public class WikipediaTest extends TestBase {
+public class MobileTest extends TestBase {
     @Tag("android")
     @Test
-    void openApp() {
-
+    void theResultOfSearchWordQAInWikipedia() {
         step("Open Wikipedia app", () -> {
             $(AppiumBy.id("org.wikipedia:id/option_label"))
                     //        $(AppiumBy.className("android.widget.TextView[2]"))
@@ -49,7 +48,7 @@ public class WikipediaTest extends TestBase {
             $(AppiumBy.className("android.widget.TextView")).click();
                    $(AppiumBy.className("android.widget.EditText"))
                                  .sendKeys("QA");
-                    $$(AppiumBy.className("android.widget.TextView")).get(0)
+                    $$(AppiumBy.className("android.widget.TextView")).get(1)
                             .shouldHave(Condition.text("QA"));
         });
     }

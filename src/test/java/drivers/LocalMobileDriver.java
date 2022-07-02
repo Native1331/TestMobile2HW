@@ -29,7 +29,6 @@ public class LocalMobileDriver implements WebDriverProvider {
     @Override
     public WebDriver createDriver(Capabilities capabilities) {
         File app = getApp();
-
         UiAutomator2Options options = new UiAutomator2Options();
         options.merge(capabilities);
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
@@ -39,7 +38,6 @@ public class LocalMobileDriver implements WebDriverProvider {
         options.setApp(app.getAbsolutePath());
         options.setAppPackage("org.wikipedia.alpha");
         options.setAppActivity("org.wikipedia.main.MainActivity");
-
         return new AndroidDriver(getAppiumServerUrl(), options);
     }
 
@@ -58,5 +56,4 @@ public class LocalMobileDriver implements WebDriverProvider {
         }
         return app;
     }
-
 }

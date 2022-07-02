@@ -40,10 +40,8 @@ public class TestBase {
     @AfterEach
     public void afterEach() {
         String sessionId = sessionId();
-
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
-
         step("Close driver", Selenide::closeWebDriver);
         if (Objects.equals(deviceHost, "browserstack")) {
             Attach.video(sessionId);

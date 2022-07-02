@@ -30,9 +30,6 @@ import java.net.URL;
             mutableCapabilities.setCapability("name", config.name());
             return new RemoteWebDriver(getBrowserstackUrl(), mutableCapabilities);
         }
-
-
-
            public static URL getBrowserstackUrl() {
             try {
                 return new URL(config.baseUrl());
