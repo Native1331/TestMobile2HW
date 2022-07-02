@@ -49,7 +49,7 @@ public class WikipediaTest extends TestBase {
             $(AppiumBy.className("android.widget.TextView")).click();
                    $(AppiumBy.className("android.widget.EditText"))
                                  .sendKeys("QA");
-                    $(AppiumBy.className("android.widget.TextView"))
+                    $$(AppiumBy.className("android.widget.TextView")).get(0)
                             .shouldHave(Condition.text("QA"));
         });
     }

@@ -20,7 +20,7 @@ public class LocalMobileDriver implements WebDriverProvider {
 
     public static URL getAppiumServerUrl() {
         try {
-            return new URL(config.getLocalUrl());
+            return new URL(config.url());
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
@@ -33,9 +33,9 @@ public class LocalMobileDriver implements WebDriverProvider {
         UiAutomator2Options options = new UiAutomator2Options();
         options.merge(capabilities);
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
-        options.setPlatformName(config.getLocalPlatformName());
-        options.setDeviceName(config.getLocalDeviceName());
-        options.setPlatformVersion(config.getLocalOsVersion());
+        options.setPlatformName(config.platformName());
+        options.setDeviceName(config.deviceName());
+        options.setPlatformVersion(config.osVersion());
         options.setApp(app.getAbsolutePath());
         options.setAppPackage("org.wikipedia.alpha");
         options.setAppActivity("org.wikipedia.main.MainActivity");

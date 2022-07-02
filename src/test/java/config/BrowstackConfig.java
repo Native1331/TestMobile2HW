@@ -9,19 +9,16 @@ import org.aeonbits.owner.Config;
         "classpath:config/credential.properties"
 })
 
-public interface CredentialsConfig extends Config {
+public interface BrowstackConfig extends Config {
     String userValue();
-    String server();
     String keyValue();
-    String project ();
+    String project();
     String build();
     String name();
     String app();
     String device();
     String osVersion();
     String baseUrl();
-
-
 }
 
 
